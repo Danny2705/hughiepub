@@ -28,3 +28,11 @@
   font-family: "Montaga", serif;
   font-family: "Montserrat", sans-serif;
 }
+
+.padding {
+  padding: 2rem;
+}
+
+.innerWidth {
+  width: 100%;
+}
