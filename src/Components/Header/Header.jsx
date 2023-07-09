@@ -2,6 +2,7 @@ import React from "react";
 import Logo from "../../Assets/Images/logo.png";
 import { Link } from "react-router-dom";
 import { BsCart } from "react-icons/bs";
+import { createItem, getAllItems } from "../../services/api.service";
 
 const Header = () => {
   return (
@@ -23,6 +24,19 @@ const Header = () => {
           </Link>
           <Link to='/login'>Log In</Link>
           <Link to='/signup'>Sign Up</Link>
+          <button
+            onClick={() => {
+              // createItem({
+              //   name: "Dan",
+              //   image: "no no",
+              //   description: "lalalalalaal",
+              //   price: 0,
+              // });
+              getAllItems();
+            }}
+          >
+            click me here
+          </button>
         </div>
       </div>
     </div>
