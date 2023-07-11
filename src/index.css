@@ -3,19 +3,19 @@
 @tailwind utilities;
 
 :root {
-  --white-color: #ffffff;
-  --red-color: #fd0e39;
-  --black-color: #000000;
-  --banana-color: #a3d70f;
-  --yellow-color: #ffd007;
-  --event-color: #fdd001;
-  --blue-color: #0260c0;
-  --orange-color: #ffae62;
-  --grey-color: #8c8b8b;
-  --light-blue-color-hover: #edf1ff;
-  --border-color: rgba(128, 128, 128, 0.143);
-  --dark-blue-color: #1f3e72;
-  --box-shadow: 0px 23px 21px -8px rgba(136, 160, 255, 0.25);
+  --white-color: #ffffff,
+  --red-color: #fd0e39,
+  --black-color: #000000,
+  --banana-color: #a3d70f,
+  --yellow-color: #ffd007,
+  --event-color: #fdd001,
+  --blue-color: #0260c0,
+  --orange-color: #ffae62,
+  --grey-color: #8c8b8b,
+  --light-blue-color-hover: #edf1ff,
+  --border-color: rgba(128, 128, 128, 0.143),
+  --dark-blue-color: #1f3e72,
+  --box-shadow: 0px 23px 21px -8px rgba(136, 160, 255, 0.25),
 }
 
 * {
@@ -23,8 +23,36 @@
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
+  font-family: "Montserrat", "Irish Grover", "Monda", "Montaga", serif, sans-serif;
+}
+
+.padding {
+  padding: 1.5rem 9rem;
+}
+
+.innerWidth {
+  width: 100%;
+}
+
+.font-irish-grover {
   font-family: "Irish Grover", cursive;
-  font-family: "Monda", sans-serif;
-  font-family: "Montaga", serif;
-  font-family: "Montserrat", sans-serif;
+}
+
+/* @media (min-width: 1536px) {
+  .innerWidth {
+    max-width: 1280px;
+    margin: auto;
+  }
+} */
+
+/* @media (max-width: 640px) {
+  .padding {
+    padding: 4rem;
+  }
+} */
+
+@media (max-width: 1280px) {
+  .padding {
+    padding: 1.5rem 2rem;
+  }
 }

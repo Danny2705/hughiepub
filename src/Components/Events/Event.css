@@ -1,0 +1,19 @@
+@media (max-width: 900px) {
+  .event-row {
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+  }
+  .content {
+    border-bottom: 4px solid red;
+  }
+}
+
+@media (max-width: 640px) {
+  .event-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

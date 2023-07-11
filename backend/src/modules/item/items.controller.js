@@ -50,7 +50,7 @@ const updateItem = async (req, res) => {
     const updatedItem = await Item.findByIdAndUpdate(id, {
       name,
       image,
-      descriptionription,
+      description,
       price,
     });
     if (!updatedItem) {

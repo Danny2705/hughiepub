@@ -1,0 +1,19 @@
+@media (max-width: 640px) {
+  .intro-container {
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+  }
+  .intro-wrapper > div:last-child {
+    height: 150px;
+  }
+  .intro-title {
+    font-size: 1.3rem;
+  }
+  .intro-des {
+    font-size: 0.9rem;
+  }
+  .knotLogo {
+    width: 300px;
+  }
+}
