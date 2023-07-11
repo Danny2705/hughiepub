@@ -11,7 +11,7 @@ module.exports = {
         'red': '#fd0e39',
         'black': '#000000',
         'banana': '#a3d70f',
-        'yellow': '#ffd007',
+        'yellow': '#ffc700',
         'event': '#fdd001',
         'blue': '#0260c0',
         'orange': '#ffae62',
@@ -20,7 +20,7 @@ module.exports = {
         'dark-blue': '#1f3e72',
       },
       fontfamily: {
-        'irish-grover': 'Irish Grover, cursive',
+        'irish-grover': ['Irish Grover'],
       },
     },
   },

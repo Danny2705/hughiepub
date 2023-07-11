@@ -1,0 +1,18 @@
+.contactInfo-wrapper {
+  background-image: url("../../Assets/Images/beer.jpg");
+  height: 600px;
+  background-repeat: no-repeat;
+  background-position: 100% 35%;
+  background-size: cover;
+}
+
+@media (max-width: 640px) {
+  .form {
+    width: 100%;
+  }
+  .contactInfo-container > h2 {
+    font-size: 1rem;
+    letter-spacing: normal;
+    width: 100%;
+  }
+}
