@@ -9,6 +9,12 @@
   font-family: "Montaga";
 }
 
+@media (max-width: 1280px) {
+  .menuList-container {
+    padding: 1.5rem 2rem;
+  }
+}
+
 @media (max-width: 900px) {
   .image-container {
     height: 35rem;
@@ -16,7 +22,17 @@
   .image-container > span {
     font-size: 3rem;
   }
-  .menu-container {
-    gap: 0;
+}
+
+@media (max-width: 640px) {
+  .category {
+    font-size: 1rem;
+  }
+  .row h3 {
+    font-size: 0.8rem;
+  }
+  .row p,
+  .right > span {
+    font-size: 0.7rem;
   }
 }
