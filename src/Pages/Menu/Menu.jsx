@@ -15,7 +15,7 @@ const MenuItem = ({ category, name, desc, price, image }) => {
   return (
     <div>
       {category && (
-        <div className='flex justify-center items-center text-[#E89314] font-extrabold text-xl tracking-widest mt-2rem'>
+        <div className='flex justify-center items-center text-[#E89314] font-extrabold text-xl tracking-widest mt-[3rem]'>
           {category}
         </div>
       )}
