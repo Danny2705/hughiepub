@@ -16,6 +16,7 @@ const MenuItem = ({ category, name, desc, price, image }) => {
     <div>
       <div className='row text-white'>
         {image && <img src={image} alt={name} className='w-full h-full object-cover mx-auto my-7' />}
+
         {category && (
         <div className='flex justify-center items-center text-[#E89314] font-extrabold text-xl tracking-widest mt-[3rem]'>
           {category}
@@ -37,6 +38,8 @@ const MenuItem = ({ category, name, desc, price, image }) => {
 
 const getCategoryImage = (category) => {
   switch (category) {
+    case "APPETIZERS":
+      return FoodPic;
     case "SOUP & SALAD":
       return Burger;
     case "HALF & HALF":
@@ -62,17 +65,15 @@ const Menu = () => {
           <span className='text-white text-[6rem]'>Menu</span>
         </div>
         <div className='menuList-container px-[9rem] py-[3rem] bg-black innerWidth flex flex-col items-center justify-center'>
-          <img src={FoodPic} alt='food Picture' width={800} />
-          <div className='flex justify-center items-center text-[#E89314] font-extrabold text-xl tracking-widest mt-[3rem]'>
-            APPETIZERS
-          </div>
           <div>
             {MenuList.food.map((item, i) => (
               <MenuItem
                 key={i}
                 category={
                   item.name === "Some of the Day"
-                    ? "SOUP & SALAD"
+                    ? "SOUP & SALAD" 
+                    : item.name === "Bangers & Mash" 
+                    ? "APPETIZERS"
                     : item.name === "Soup & Salad"
                     ? "HALF & HALF"
                     : item.name === "Hot Tea or Coffee"
@@ -89,6 +90,8 @@ const Menu = () => {
                 image={getCategoryImage(
                   item.name === "Some of the Day"
                     ? "SOUP & SALAD"
+                    : item.name === "Bangers & Mash" 
+                    ? "APPETIZERS"
                     : item.name === "Soup & Salad"
                     ? "HALF & HALF"
                     : item.name === "Hot Tea or Coffee"
