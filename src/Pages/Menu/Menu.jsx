@@ -24,8 +24,8 @@ const MenuItem = ({ category, name, desc, price, image }) => {
       )}
         <div className=" flex items-start justify-between">
           <div className='left'>
-            <h3 className='text-banana font-bold text-xl mb-2'>{name}</h3>
-            <p className="text-grey">{desc}</p>
+            <h3 className='text-banana font-bold text-xl'>{name}</h3>
+            <p className="text-grey mb-4">{desc}</p>
           </div>
           <div className='right'>
             <span>${price.toFixed(2)}</span>
