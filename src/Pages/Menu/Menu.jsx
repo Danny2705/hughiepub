@@ -14,13 +14,13 @@ import Burger from "../../Assets/Images/burger.png";
 const MenuItem = ({ category, name, desc, price, image }) => {
   return (
     <div>
-      {category && (
+      <div className='row text-white'>
+        {image && <img src={image} alt={name} className='w-full h-full object-cover mx-auto my-7' />}
+        {category && (
         <div className='flex justify-center items-center text-[#E89314] font-extrabold text-xl tracking-widest mt-[3rem]'>
           {category}
         </div>
       )}
-      <div className='row text-white'>
-        {image && <img src={image} alt={name} className='w-full h-full object-cover mx-auto my-7' />}
         <div className=" flex items-center justify-between">
           <div className='left'>
             <h3 className='text-banana font-bold text-xl mb-2'>{name}</h3>

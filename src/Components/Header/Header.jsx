@@ -92,7 +92,7 @@ const Header = () => {
             </Link>
             <Link
               to='/reserve'
-              className='bg-red px-4 py-1 rounded-md items-center uppercase text-[1rem] font-[600] transition-all duration-300 ease-in hover:scale-110'
+              className='bg-red px-1 py-1 rounded-md items-center uppercase text-[1rem] font-[600] transition-all duration-300 ease-in hover:scale-110 flex text-center'
             >
               Make a reservation
             </Link>
