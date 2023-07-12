@@ -45,16 +45,10 @@ const Header = () => {
               </span>
             </Link>
             <Link
-              to='/login'
+              to='/reserve'
               className='bg-red px-4 py-1 rounded-md items-center uppercase text-[1rem] font-[600] transition-all duration-300 ease-in hover:scale-110'
             >
-              Log In
-            </Link>
-            <Link
-              to='/signup'
-              className='bg-red px-4 py-1 rounded-md items-center uppercase text-[1rem] font-[600] transition-all duration-300 ease-in hover:scale-110'
-            >
-              Sign Up
+              Make a reservation
             </Link>
           </div>
 
@@ -82,7 +76,7 @@ const Header = () => {
       </div>
 
       {menuOpen && (
-        <div className='nav-burger flex flex-col items-center justify-start absolute right-9 top-50 w-[12rem] bg-black h-[fit-content] py-5 rounded-xl border border-white'>
+        <div className='nav-burger flex flex-col items-center justify-start absolute right-9 top-50 w-[12rem] bg-black h-[fit-content] py-5 rounded-xl border border-white z-50'>
           <div className='nav-menu text-[#ffffff] flex flex-col items-center gap-5 text-[1rem] uppercase font-[600] tracking-wider'>
             <Link to='/events' className='transition-all duration-300 ease-in hover:text-orange'>Events</Link>
             <Link to='/menu' className='transition-all duration-300 ease-in hover:text-orange'>Menu</Link>
@@ -97,16 +91,10 @@ const Header = () => {
               </span>
             </Link>
             <Link
-              to='/login'
+              to='/reserve'
               className='bg-red px-4 py-1 rounded-md items-center uppercase text-[1rem] font-[600] transition-all duration-300 ease-in hover:scale-110'
             >
-              Log In
-            </Link>
-            <Link
-              to='/signup'
-              className='bg-red px-4 py-1 rounded-md items-center uppercase text-[1rem] font-[600] transition-all duration-300 ease-in hover:scale-110 '
-            >
-              Sign Up
+              Make a reservation
             </Link>
           </div>
         </div>

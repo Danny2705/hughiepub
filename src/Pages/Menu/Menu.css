@@ -1,0 +1,22 @@
+.image-container {
+  position: relative;
+}
+
+.image-container > span {
+  position: absolute;
+  top: 40%;
+  left: 37%;
+  font-family: "Montaga";
+}
+
+@media (max-width: 900px) {
+  .image-container {
+    height: 35rem;
+  }
+  .image-container > span {
+    font-size: 3rem;
+  }
+  .menu-container {
+    gap: 0;
+  }
+}

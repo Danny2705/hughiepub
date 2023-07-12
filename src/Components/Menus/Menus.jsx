@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 
 const Menu = () => {
   return (
-    <div className='menu-wrapper bg-black'>
-      <div className='menu-container padding innerWidth'>
+    <div className='menus-wrapper bg-black'>
+      <div className='menus-container padding innerWidth'>
         <div className='menu-title text-xl font-bold text-yellow uppercase filter my-10'>
           Menu
         </div>
