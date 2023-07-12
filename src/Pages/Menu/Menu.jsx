@@ -49,7 +49,7 @@ const Menu = () => {
                         <p>{item.desc}</p>
                       </div>
                       <div className='right'>
-                        <span>{item.price}</span>
+                        <span>${item.price}</span>
                       </div>
                     </div>
                   </div>
@@ -69,7 +69,7 @@ const Menu = () => {
                         <p>{item.desc}</p>
                       </div>
                       <div className='right'>
-                        <span>{item.price}</span>
+                        <span>${item.price}</span>
                       </div>
                     </div>
                   </div>
@@ -89,7 +89,7 @@ const Menu = () => {
                         <p>{item.desc}</p>
                       </div>
                       <div className='right'>
-                        <span>{item.price}</span>
+                        <span>${item.price}</span>
                       </div>
                     </div>
                   </div>
@@ -114,7 +114,7 @@ const Menu = () => {
                         <p>{item.desc}</p>
                       </div>
                       <div className='right'>
-                        <span>{item.price}</span>
+                        <span>${item.price}</span>
                       </div>
                     </div>
                   </div>
@@ -134,7 +134,7 @@ const Menu = () => {
                         <p className="text-grey">{item.desc}</p>
                       </div>
                       <div className='right'>
-                        <span>{item.price}</span>
+                        <span>${item.price}</span>
                       </div>
                     </div>
                   </div>
