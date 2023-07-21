@@ -7,7 +7,7 @@ const Hero = () => {
       <div className='hero-container innerWidth h-[75vh]'>
         <img
           src={HeroImage}
-          alt='Hero Image'
+          alt='Hero'
           className='image w-full h-full object-cover'
         />
       </div>

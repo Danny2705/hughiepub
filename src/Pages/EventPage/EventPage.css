@@ -1,0 +1,57 @@
+.eventPage-container > .image-container > span {
+  top: 40%;
+  left: 25%;
+  font-family: 'Montaga';
+}
+
+@media (max-width: 1280px) {
+  .eventPage-container > .image-container > span {
+    font-size: 3rem;
+  }
+  .eventPage-container > .image-container > span {
+    left: 35%;
+    font-weight: 600;
+  }
+}
+
+@media (max-width: 1024px) {
+  .eventList-container {
+    padding: 1.5rem 2rem;
+  }
+  .eventPage-container > .image-container > span {
+    left: 30%;
+  }
+}
+
+@media (max-width: 912px) {
+  .eventPage-container > .image-container > span  {
+    left: 30%;
+    top: 45%;
+  }
+}
+
+@media (max-width: 640px) {
+  .eventList-container {
+    padding: 1.5rem 2rem;
+  }
+  .eventPage-container > .image-container > span {
+    left: 20%;
+    font-size: 2rem;
+  }
+  .event-rows {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .event-rows > img {
+    width: 100%;
+  }
+  .event-desc > h2,
+  .event-desc > p {
+    justify-content: center;
+    text-align: center;
+  }
+  .event-desc {
+    gap: 1rem;
+  }
+}
+

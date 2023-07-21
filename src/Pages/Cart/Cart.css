@@ -1,0 +1,5 @@
+@media (max-width: 1280px) {
+  .cart-container .food-item {
+    padding: 1.5rem 2rem;
+  }
+}

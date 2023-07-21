@@ -1,0 +1,51 @@
+.fc .fc-toolbar.fc-header-toolbar {
+  padding: 0 3rem;
+}
+
+.fc-button-group {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.fc-next-button, .fc-prev-button {
+  padding: 0.25rem;
+  background-color: red;
+}
+
+.fc-h-event .fc-event-main-frame {
+ background-color: yellowgreen;   
+}
+
+.fc-h-event .fc-event-time {
+  color: red;
+}
+
+.fc-h-event .fc-event-title {
+  color: blue;
+}
+
+@media (max-width: 640px) {
+  .fc .fc-toolbar-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+  .fc .fc-toolbar.fc-header-toolbar {
+    padding: 0 1rem;
+  }
+  .fc .fc-button-primary:disabled {
+
+  }
+}
+
+@media (max-width: 360px) {
+  .fc .fc-button {
+    padding: 0.1rem 0.2rem;
+  }
+  .fc-icon {
+    width: 22px;
+    height: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

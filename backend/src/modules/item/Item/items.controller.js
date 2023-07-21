@@ -1,4 +1,4 @@
-const Item = require("../../models/items.model");
+const Item = require("../../../models/items.model");
 
 // Fetch all items
 const getAllItems = async (req, res) => {

@@ -10,7 +10,7 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className='header-wrapper padding innerWidth bg-[#000000]'>
+    <div className='header-wrapper padding innerWidth bg-[#000000] overflow-hidden'>
       <div className='message text-[#8c8c8c] flex justify-between items-center text-sm mb-2 font-bold flex-wrap'>
         <span>118 Stephen St., Lemont, IL, United States, Illinois</span>
         <span>+1 630-312-8152</span>

@@ -61,12 +61,12 @@ const Menu = () => {
       <div className='menu-container'>
         <Header />
         <div className='image-container innerWidth h-[75vh]'>
-          <img src={MenuImage} alt='menu image' className='w-full h-full object-cover' />
+          <img src={MenuImage} alt='menu' className='w-full h-full object-cover' />
           <span className='text-white text-[6rem]'>Menu</span>
         </div>
         <div className='menuList-container px-[9rem] py-[3rem] bg-black innerWidth flex flex-col items-center justify-center'>
           <div>
-            {MenuList.food.map((item, i) => (
+            {MenuList.map((item, i) => (
               <MenuItem
                 key={i}
                 category={

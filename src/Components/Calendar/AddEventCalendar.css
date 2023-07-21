@@ -1,0 +1,16 @@
+.form-control {
+  outline: none;
+  padding: 0.25rem;
+  border-radius: 0.5rem;
+}
+
+.rdtDays {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.rdtDays > table {
+  width: 100%;
+}

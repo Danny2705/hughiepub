@@ -53,10 +53,46 @@ export const updateItem = async (id, updatedItem) => {
     });
 };
 
-// Delete an item by ID
 export const deleteItem = async (id) => {
   return httpClient
     .delete(`/items/${id}`)
+    .then((response) => {
+      return response.data;
+    })
+    .catch((error) => {
+      throw error;
+    });
+};
+
+export async function handleEventAdd(data) {
+  return httpClient.post("/calendar/create-event", data);
+}
+
+export async function getEvent() {
+  return httpClient.get("/calendar/get-events");
+}
+
+export const updateEvent = async (id, updatedEvent) => {
+  console.log(id);
+  return httpClient.put(`/calendar/update-event/${id}`, updatedEvent).then((response) => {
+    return response.data;
+  }).catch((error) => {
+    throw error;
+  });
+};
+
+export const deleteEvent = async (id) => {
+  console.log(id);
+  return httpClient.delete(`/calendar/delete-event/${id}`).then((response) => {
+    return response.data;
+  }).catch((error) => {
+    throw error;
+  });
+};
+
+export const getEventById = async (id) => {
+  return httpClient
+    .get(`/calendar/get-events/${id}`)
     .then((response) => {
       return response.data;
     })

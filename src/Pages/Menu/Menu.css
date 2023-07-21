@@ -2,7 +2,7 @@
   position: relative;
 }
 
-.image-container > span {
+.menu-container .image-container > span {
   position: absolute;
   top: 40%;
   left: 37%;

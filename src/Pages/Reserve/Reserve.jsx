@@ -22,7 +22,7 @@ const Login = () => {
         </div>
 
         <div className="right-pic flex-1">
-          <img src={Pic} alt="store image" width={500} />
+          <img src={Pic} alt="store" width={500} />
         </div>
       </div>
     </div>
