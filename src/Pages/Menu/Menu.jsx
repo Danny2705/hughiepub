@@ -15,17 +15,23 @@ const MenuItem = ({ category, name, desc, price, image }) => {
   return (
     <div>
       <div className='row text-white'>
-        {image && <img src={image} alt={name} className='w-full h-full object-cover mx-auto my-7' />}
+        {image && (
+          <img
+            src={image}
+            alt={name}
+            className='w-full h-full object-cover mx-auto my-7'
+          />
+        )}
 
         {category && (
-        <div className='category flex justify-center items-center text-[#E89314] font-extrabold text-xl tracking-widest mt-[3rem]'>
-          {category}
-        </div>
-      )}
-        <div className=" flex items-start justify-between">
+          <div className='category flex justify-center items-center text-[#E89314] font-extrabold text-xl tracking-widest mt-[3rem]'>
+            {category}
+          </div>
+        )}
+        <div className=' flex items-start justify-between'>
           <div className='left'>
             <h3 className='text-banana font-bold text-xl'>{name}</h3>
-            <p className="text-grey mb-4">{desc}</p>
+            <p className='text-grey mb-4'>{desc}</p>
           </div>
           <div className='right'>
             <span>${price.toFixed(2)}</span>
@@ -61,7 +67,11 @@ const Menu = () => {
       <div className='menu-container'>
         <Header />
         <div className='image-container innerWidth h-[75vh]'>
-          <img src={MenuImage} alt='menu' className='w-full h-full object-cover' />
+          <img
+            src={MenuImage}
+            alt='menu'
+            className='w-full h-full object-cover'
+          />
           <span className='text-white text-[6rem]'>Menu</span>
         </div>
         <div className='menuList-container px-[9rem] py-[3rem] bg-black innerWidth flex flex-col items-center justify-center'>
@@ -71,8 +81,8 @@ const Menu = () => {
                 key={i}
                 category={
                   item.name === "Some of the Day"
-                    ? "SOUP & SALAD" 
-                    : item.name === "Bangers & Mash" 
+                    ? "SOUP & SALAD"
+                    : item.name === "Bangers & Mash"
                     ? "APPETIZERS"
                     : item.name === "Soup & Salad"
                     ? "HALF & HALF"
@@ -90,7 +100,7 @@ const Menu = () => {
                 image={getCategoryImage(
                   item.name === "Some of the Day"
                     ? "SOUP & SALAD"
-                    : item.name === "Bangers & Mash" 
+                    : item.name === "Bangers & Mash"
                     ? "APPETIZERS"
                     : item.name === "Soup & Salad"
                     ? "HALF & HALF"
@@ -104,6 +114,20 @@ const Menu = () => {
                 )}
               />
             ))}
+          </div>
+
+          <div className='addText text-yellow flex flex-col justify-center items-center gap-[1rem] w-[60%] mt-2'>
+            <span className='text-center'>
+              *Please be aware that we use a common fryer & grill. Due to these
+              circumstances, we are unable to guarantee that any menu item can
+              be completely free of allergens*
+            </span>
+            <span className='text-center'>
+              Free Wifi: hughie-guest - Password: hughie100
+            </span>
+            <span className='text-center'>
+              118 Stephen Street, Lemon IL 60439 - 630.312.8152
+            </span>
           </div>
         </div>
         <Footer />

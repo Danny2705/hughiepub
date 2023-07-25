@@ -64,7 +64,8 @@ export const deleteItem = async (id) => {
     });
 };
 
-export async function handleEventAdd(data) {
+export async function addEvent(data) {
+  console.log("data", data);
   return httpClient.post("/calendar/create-event", data);
 }
 

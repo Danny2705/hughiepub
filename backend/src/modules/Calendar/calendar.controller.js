@@ -1,21 +1,17 @@
-const express = require("express");
 const Event = require("../../models/event.model");
 
-const router = express.Router();
-
-router.post("/create-event", async (req, res) => {
-  console.log(req.body);
-  const event = new Event(req.body.event);
+const createEvent = async (req, res) => {
+  const event = new Event(req.body);
   await event.save();
   res.sendStatus(201);
-});
+};
 
-router.get("/get-events", async (req, res) => {
+const getEvent = async (req, res) => {
   const events = await Event.find();
   res.send(events);
-});
+};
 
-router.put("/update-event/:id", async (req, res) => {
+const updateEvent = async (req, res) => {
   const { id } = req.params;
   try {
     const updatedEvent = await Event.findByIdAndUpdate(id, req.body, {
@@ -28,9 +24,9 @@ router.put("/update-event/:id", async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: "Internal server error" });
   }
-});
+};
 
-router.delete("/delete-event/:id", async (req, res) => {
+const deleteEvent = async (req, res) => {
   const { id } = req.params;
   try {
     const deletedEvent = await Event.findByIdAndDelete(id);
@@ -41,9 +37,9 @@ router.delete("/delete-event/:id", async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: "Internal server error" });
   }
-});
+};
 
-router.get("/get-events/:id", async (req, res) => {
+const getEventById = async (req, res) => {
   const { id } = req.params;
   try {
     const event = await Event.findById(id);
@@ -54,6 +50,12 @@ router.get("/get-events/:id", async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: "Internal server error" });
   }
-});
+};
 
-module.exports = router;
+module.exports = {
+  createEvent,
+  getEvent,
+  updateEvent,
+  deleteEvent,
+  getEventById,
+};

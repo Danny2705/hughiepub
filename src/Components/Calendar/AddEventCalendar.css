@@ -9,8 +9,44 @@
   justify-content: center;
   align-items: center;
   width: 100%;
+  cursor: pointer;
 }
 
 .rdtDays > table {
   width: 100%;
+}
+
+.rdt > input {
+  text-align: center;
+}
+
+.rdtCounters {
+  cursor: pointer;
+}
+
+@media (max-width: 640px) {
+  .addModal {
+    padding: 0;
+    top: 1rem;
+  }
+
+  .addModal > form > div > label {
+    font-size: smaller;
+    margin: 0.15rem 0;
+  }
+
+  .addModal > form > div > input, .rdt > input {
+    padding: 0.05rem 0.25rem;
+    font-size: smaller;
+    margin-bottom: 0.15rem;
+  }
+
+  .rdtDays > table > thead, .rdtDays > table > tbody {
+    font-size: smaller;
+  }
+  .addModal > form > button  {
+    font-size: smaller;
+    padding: 0.15rem 0.5rem;
+    margin-bottom: 0.5rem;
+  }
 }

@@ -7,13 +7,19 @@
   gap: 0.5rem;
 }
 
-.fc-next-button, .fc-prev-button {
+.fc-event-main,
+.fc-daygrid-event-harness {
+  cursor: pointer;
+}
+
+.fc-next-button,
+.fc-prev-button {
   padding: 0.25rem;
   background-color: red;
 }
 
 .fc-h-event .fc-event-main-frame {
- background-color: yellowgreen;   
+  background-color: yellowgreen;
 }
 
 .fc-h-event .fc-event-time {
@@ -33,7 +39,6 @@
     padding: 0 1rem;
   }
   .fc .fc-button-primary:disabled {
-
   }
 }
 

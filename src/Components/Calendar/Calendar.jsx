@@ -3,11 +3,10 @@ import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import { useState } from "react";
 import AddEventCalendar from "./AddEventCalendar";
-import { useRef } from "react";
 import moment from "moment";
 import {
   getEvent,
-  handleEventAdd,
+  addEvent,
   updateEvent,
   deleteEvent,
   getEventById,
@@ -16,19 +15,28 @@ import { useEffect } from "react";
 import "./Calendar.css";
 import { BsFillPlusCircleFill } from "react-icons/bs";
 import UpdateModal from "./UpdateModal";
+import ViewEventModal from "./ViewEventCalendar";
 
 const Calendar = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [loading, setLoading] = useState(true);
   const [events, setEvents] = useState([]);
   const [selectedEvent, setSelectedEvent] = useState(null);
+  const [selectedEventForView, setSelectedEventForView] = useState(null);
+  const [viewModalOpen, setViewModalOpen] = useState(false);
   const [addModalOpen, setAddModalOpen] = useState(false);
   const [updateModalOpen, setUpdateModalOpen] = useState(false);
-  const calendarRef = useRef(null);
 
-  const onEventAdded = (event) => {
-    let calendarApi = calendarRef.current.getApi();
-    calendarApi.addEvent({
+  const onViewEventClick = (event) => {
+    setSelectedEventForView(event);
+    setViewModalOpen(true);
+  };
+
+  const onEventAdded = async (event) => {
+    console.log(event);
+    // let calendarApi = calendarRef.current.getApi();
+    console.log("event", event);
+    await addEvent({
       start: moment(event.start).toDate(),
       end: moment(event.end).toDate(),
       title: event.title,
@@ -45,8 +53,6 @@ const Calendar = () => {
 
   const onEventClick = async (info) => {
     const clickedEvent = await getEventById(info.event.extendedProps._id);
-    console.log(clickedEvent);
-    console.log(info);
     setSelectedEvent({
       id: clickedEvent._id,
       start: clickedEvent.start,
@@ -64,20 +70,39 @@ const Calendar = () => {
         end: updatedEvent.end.toISOString(),
       });
 
-      const calendarApi = calendarRef.current.getApi();
-      const eventToUpdate = calendarApi.getEventById(updatedEvent.id);
-      if (eventToUpdate) {
-        eventToUpdate.setProp("title", updatedEvent.title);
-        eventToUpdate.setStart(updatedEvent.start);
-        eventToUpdate.setEnd(updatedEvent.end);
-      }
+      const updatedEvents = events.map((event) =>
+        event.id === updatedEvent.id ? updatedEvent : event
+      );
+      setEvents(updatedEvents);
 
       setUpdateModalOpen(false);
-      setLoading(true);
     } catch (error) {
       console.error("Error updating event:", error);
     }
   };
+
+  // const handleUpdateEvent = async (updatedEvent) => {
+  //   try {
+  //     await updateEvent(updatedEvent.id, {
+  //       title: updatedEvent.title,
+  //       start: updatedEvent.start.toISOString(),
+  //       end: updatedEvent.end.toISOString(),
+  //     });
+
+  //     // const calendarApi = calendarRef.current.getApi();
+  //     // const eventToUpdate = calendarApi.getEventById(updatedEvent.id);
+  //     if (eventToUpdate) {
+  //       eventToUpdate.setProp("title", updatedEvent.title);
+  //       eventToUpdate.setStart(updatedEvent.start);
+  //       eventToUpdate.setEnd(updatedEvent.end);
+  //     }
+
+  //     setUpdateModalOpen(false);
+  //     setLoading(true);
+  //   } catch (error) {
+  //     console.error("Error updating event:", error);
+  //   }
+  // };
 
   const handleDeleteEvent = async () => {
     try {
@@ -103,7 +128,7 @@ const Calendar = () => {
 
   return (
     <div className='mt-[2rem] flex flex-col gap-[2rem]'>
-      <div className='flex innerWidth justify-end'>
+      <div className='flex innerWidth justify-end gap-[1rem]'>
         <button
           className='add-event bg-red px-3 py-2 rounded-lg transition-all duration-300 ease-in hover:scale-110 flex justify-center items-center outline-none'
           onClick={() => setAddModalOpen(true)}
@@ -113,21 +138,34 @@ const Calendar = () => {
             Add Event
           </p>
         </button>
+
+        <button
+          className='add-event bg-red px-3 py-2 rounded-lg transition-all duration-300 ease-in hover:scale-110 flex justify-center items-center outline-none'
+          onClick={() => onViewEventClick(events)}
+        >
+          <p className='text-white flex items-center justify-center gap-2 font-semibold'>
+            <BsFillPlusCircleFill />
+            View Event
+          </p>
+        </button>
       </div>
       <div className='relative z-0 bg-white text-black rounded-xl py-4'>
         <FullCalendar
           plugins={[dayGridPlugin]}
           events={events}
-          ref={calendarRef}
           initialView='dayGridMonth'
-          eventAdd={(event) => handleEventAdd(event)}
-          eventClick={(event) => {
-            onEventClick(event);
-          }} // Handle event click to update/delete events
+          eventAdd={(event) => addEvent(event)}
+          eventClick={onEventClick}
           dateClick={onDateClick}
           className='bg-red'
         />
       </div>
+
+      <ViewEventModal
+        isOpen={viewModalOpen}
+        onClose={() => setViewModalOpen(false)}
+        events={events}
+      />
 
       <AddEventCalendar
         isOpen={addModalOpen}

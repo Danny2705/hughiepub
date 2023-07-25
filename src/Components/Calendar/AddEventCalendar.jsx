@@ -25,29 +25,43 @@ export default function EventModal({ isOpen, onClose, onEventAdded }) {
     <Modal
       isOpen={isOpen}
       onRequestClose={onClose}
-      className='w-[20rem] bg-yellow left-[8%] py-6 absolute flex justify-center items-center rounded-xl'
+      className='addModal w-[20rem] bg-yellow left-[8%] py-6 absolute flex justify-center items-center rounded-xl'
     >
       <form
         onSubmit={onSubmit}
-        className='flex flex-col justify-center items-center'
+        className='flex flex-col justify-center items-center w-full'
       >
-        <label className='flex items-center justify-center font-bold text-blue my-2'> Title</label>
-        <input
-          type='text'
-          placeholder='Type the tile of the event'
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-          className='outline-none placeholder-black p-[0.25rem] rounded-lg'
-        />
-
         <div>
-          <label className='flex items-center justify-center font-bold text-blue my-2'>Start Date</label>
-          <Datetime value={start} onChange={(date) => setStart(date)} />
+          <label className='flex items-center justify-center font-bold text-blue my-2'>
+            {" "}
+            Title
+          </label>
+          <input
+            type='text'
+            placeholder='Type the tile of the event'
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            className='outline-none placeholder-black p-[0.25rem] rounded-lg'
+            required
+          />
         </div>
 
         <div>
-          <label className="flex justify-center items-center font-bold text-blue my-2">End Date</label>
-          <Datetime value={end} onChange={(date) => setEnd(date)} />
+          <label className='flex items-center justify-center font-bold text-blue my-2'>
+            Start Date
+          </label>
+          <Datetime
+            value={start}
+            required
+            onChange={(date) => setStart(date)}
+          />
+        </div>
+
+        <div>
+          <label className='flex justify-center items-center font-bold text-blue my-2'>
+            End Date
+          </label>
+          <Datetime value={end} requiredonChange={(date) => setEnd(date)} />
         </div>
 
         <button className='bg-red border-2 border-white px-3 py-1 rounded-md justify-center items-center uppercase text-[1rem] font-[600] text-white transition-all duration-300 ease-in hover:scale-105 flex mx-auto mt-2'>

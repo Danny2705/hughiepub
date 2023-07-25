@@ -6,7 +6,7 @@ import { BiMenuAltRight } from "react-icons/bi";
 import "./Header.css";
 //import { createItem, getAllItems } from "../../services/api.service";
 
-const Header = () => {
+const Header = ({ count }) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
@@ -18,7 +18,7 @@ const Header = () => {
 
       <div className='header-container text-xl flex justify-between items-center gap-[2rem]'>
         <Link to='/' className='flex items-center justify-center w-56 gap-2'>
-          <img src={Logo} alt='logo' width={110} className="logo"/>
+          <img src={Logo} alt='logo' width={110} className='logo' />
           <div className='font-irish-grover text-[#ffffff] items-center text-2xl'>
             Hughie's Irish Pub
           </div>
@@ -26,13 +26,22 @@ const Header = () => {
 
         <div className='nav flex items-center justify-between w-[600px]'>
           <div className='nav-menu text-[#ffffff] flex items-center gap-5 text-[1rem] uppercase font-[600] tracking-wider'>
-            <Link to='/events' className='transition-all duration-300 ease-in hover:text-orange'>
+            <Link
+              to='/events'
+              className='transition-all duration-300 ease-in hover:text-orange'
+            >
               Events
             </Link>
-            <Link to='/menu' className='transition-all duration-300 ease-in hover:text-orange'>
+            <Link
+              to='/menu'
+              className='transition-all duration-300 ease-in hover:text-orange'
+            >
               Menu
             </Link>
-            <Link to='/contact' className='transition-all duration-300 ease-in hover:text-orange'>
+            <Link
+              to='/contact'
+              className='transition-all duration-300 ease-in hover:text-orange'
+            >
               Contact
             </Link>
           </div>
@@ -40,8 +49,8 @@ const Header = () => {
           <div className='nav-right text-[#ffffff] flex items-center gap-5'>
             <Link to='/cart' className='relative'>
               <BsCart />
-              <span className='absolute top-[-22px] right-0.5 text-[#ffae62]'>
-                0
+              <span className='absolute top-[-22px] right-0 text-[#ffae62] text-[0.9rem]'>
+                {count}
               </span>
             </Link>
             <Link
@@ -78,16 +87,31 @@ const Header = () => {
       {menuOpen && (
         <div className='nav-burger flex flex-col items-center justify-start absolute right-9 top-50 w-[12rem] bg-black h-[fit-content] py-5 rounded-xl border border-white z-50'>
           <div className='nav-menu text-[#ffffff] flex flex-col items-center gap-5 text-[1rem] uppercase font-[600] tracking-wider'>
-            <Link to='/events' className='transition-all duration-300 ease-in hover:text-orange'>Events</Link>
-            <Link to='/menu' className='transition-all duration-300 ease-in hover:text-orange'>Menu</Link>
-            <Link to='/contact' className='transition-all duration-300 ease-in hover:text-orange'>Contact</Link>
+            <Link
+              to='/events'
+              className='transition-all duration-300 ease-in hover:text-orange'
+            >
+              Events
+            </Link>
+            <Link
+              to='/menu'
+              className='transition-all duration-300 ease-in hover:text-orange'
+            >
+              Menu
+            </Link>
+            <Link
+              to='/contact'
+              className='transition-all duration-300 ease-in hover:text-orange'
+            >
+              Contact
+            </Link>
           </div>
 
           <div className='nav-right text-[#ffffff] flex flex-col items-center gap-4 justify-start mt-7'>
             <Link to='/cart' className='relative'>
               <BsCart />
-              <span className='absolute bottom-2.5 right-0.5 text-[#ffae62]'>
-                0
+              <span className='absolute bottom-2.5 right-0 text-[#ffae62] text-[0.9rem]'>
+                {count}
               </span>
             </Link>
             <Link

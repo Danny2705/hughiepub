@@ -27,7 +27,7 @@ const getItemById = async (req, res) => {
 // Create a new item
 const createItem = async (req, res) => {
   console.log(req.body);
-  const { name, image, description, price } = req.body;
+  const { name, description, price } = req.body;
   try {
     const newItem = new Item({
       name,
@@ -45,7 +45,7 @@ const createItem = async (req, res) => {
 // Update an existing item by ID
 const updateItem = async (req, res) => {
   const { id } = req.params;
-  const { name, image, description, price } = req.body;
+  const { name, description, price } = req.body;
   try {
     const updatedItem = await Item.findByIdAndUpdate(id, {
       name,

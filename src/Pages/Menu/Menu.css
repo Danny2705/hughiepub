@@ -35,4 +35,8 @@
   .right > span {
     font-size: 0.7rem;
   }
+  .addText {
+    width: 100%;
+    font-size: 0.8rem;
+  }
 }

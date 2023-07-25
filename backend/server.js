@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const itemRoutes = require("./src/modules/item/Item/items.routes");
+const eventRoutes = require("./src/modules/Calendar/calendar.routes")
 
 const app = express();
 
@@ -21,10 +22,7 @@ app.use(express.json());
 app.use(cors());
 // Routes
 app.use("/api", itemRoutes);
-app.use(
-  "/api/calendar",
-  require("./src/modules/Calendar/calendarController.js")
-);
+app.use("/api/calendar", eventRoutes);
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
