@@ -33,7 +33,6 @@ export default function EventModal({ isOpen, onClose, onEventAdded }) {
       >
         <div>
           <label className='flex items-center justify-center font-bold text-blue my-2'>
-            {" "}
             Title
           </label>
           <input

@@ -1,7 +1,7 @@
 .eventPage-container > .image-container > span {
   top: 40%;
   left: 25%;
-  font-family: 'Montaga';
+  font-family: "Montaga";
 }
 
 @media (max-width: 1280px) {
@@ -24,7 +24,7 @@
 }
 
 @media (max-width: 912px) {
-  .eventPage-container > .image-container > span  {
+  .eventPage-container > .image-container > span {
     left: 30%;
     top: 45%;
   }
@@ -53,5 +53,13 @@
   .event-desc {
     gap: 1rem;
   }
+  .text-right > div {
+    font-size: 1.1rem;
+  }
+  .event-desc p > div {
+    font-size: 0.9rem;
+  }
+  .event-desc > button {
+    font-size: 0.7rem;
+  }
 }
-

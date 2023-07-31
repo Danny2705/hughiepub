@@ -5,19 +5,18 @@ import Event from "../../Components/Events/Event";
 import Menus from "../../Components/Menus/Menus";
 import ContactInfo from "../../Components/ContactInfo/ContactInfo";
 import Footer from "../../Components/Footer/Footer";
-import Layout from "../../Components/Layout/Layout";
+import Header from "../../Components/Header/Header";
 
 const Home = () => {
   return (
     <div>
-      <Layout>
-        <Hero />
-        <Intro />
-        <Event />
-        <Menus />
-        <ContactInfo />
-        <Footer />
-      </Layout>
+      <Header />
+      <Hero />
+      <Intro />
+      <Event />
+      <Menus />
+      <ContactInfo />
+      <Footer />
     </div>
   );
 };

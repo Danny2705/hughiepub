@@ -30,9 +30,9 @@ export const getItemById = async (id) => {
 
 // Create a new item
 export const createItem = async (item) => {
-  console.log(item);
+  console.log("item", item);
   return httpClient
-    .post(`/items`, { item: item })
+    .post(`/items`, item)
     .then((response) => {
       return response.data;
     })
@@ -75,20 +75,26 @@ export async function getEvent() {
 
 export const updateEvent = async (id, updatedEvent) => {
   console.log(id);
-  return httpClient.put(`/calendar/update-event/${id}`, updatedEvent).then((response) => {
-    return response.data;
-  }).catch((error) => {
-    throw error;
-  });
+  return httpClient
+    .put(`/calendar/update-event/${id}`, updatedEvent)
+    .then((response) => {
+      return response.data;
+    })
+    .catch((error) => {
+      throw error;
+    });
 };
 
 export const deleteEvent = async (id) => {
   console.log(id);
-  return httpClient.delete(`/calendar/delete-event/${id}`).then((response) => {
-    return response.data;
-  }).catch((error) => {
-    throw error;
-  });
+  return httpClient
+    .delete(`/calendar/delete-event/${id}`)
+    .then((response) => {
+      return response.data;
+    })
+    .catch((error) => {
+      throw error;
+    });
 };
 
 export const getEventById = async (id) => {

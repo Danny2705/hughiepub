@@ -32,13 +32,32 @@
 
 @media (max-width: 640px) {
   .fc .fc-toolbar-title {
-    font-size: 1.25rem;
+    font-size: 1rem;
     font-weight: 700;
   }
   .fc .fc-toolbar.fc-header-toolbar {
     padding: 0 1rem;
   }
-  .fc .fc-button-primary:disabled {
+  .add-evt,
+  .view-evt {
+    font-size: 0.6rem;
+  }
+  .calendar-container {
+    gap: 1rem;
+  }
+  .calendar-container > div:first-child {
+    gap: 0.5rem;
+  }
+  .fc .fc-button {
+    font-size: 0.8rem;
+    padding: 0.2rem 0.45rem;
+  }
+  .fc th,
+  .fc-h-event .fc-event-title,
+  .fc-daygrid-day-top > a,
+  .fc-h-event .fc-event-time,
+  .fc-event-time {
+    font-size: 0.8rem;
   }
 }
 

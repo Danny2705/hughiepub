@@ -1,0 +1,8 @@
+@media (max-width: 640px) {
+  .menuItem-container > .row > img {
+    margin: 1.2rem auto;
+  }
+  .menuItem-container .left > p {
+    font-size: 0.6rem;
+  }
+}

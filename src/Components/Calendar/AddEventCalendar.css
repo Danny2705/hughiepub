@@ -20,8 +20,36 @@
   text-align: center;
 }
 
+.rdt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .rdtCounters {
   cursor: pointer;
+  display: flex;
+  gap: 1rem;
+}
+
+.rdtTime .rdtSwitch {
+  display: flex;
+  justify-content: center;
+}
+
+.rdtCounter {
+  display: flex;
+}
+
+.rdtBtn {
+  width: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rdtCounterSeparator {
+  display: flex;
 }
 
 @media (max-width: 640px) {
@@ -35,16 +63,18 @@
     margin: 0.15rem 0;
   }
 
-  .addModal > form > div > input, .rdt > input {
+  .addModal > form > div > input,
+  .rdt > input {
     padding: 0.05rem 0.25rem;
     font-size: smaller;
     margin-bottom: 0.15rem;
   }
 
-  .rdtDays > table > thead, .rdtDays > table > tbody {
+  .rdtDays > table > thead,
+  .rdtDays > table > tbody {
     font-size: smaller;
   }
-  .addModal > form > button  {
+  .addModal > form > button {
     font-size: smaller;
     padding: 0.15rem 0.5rem;
     margin-bottom: 0.5rem;

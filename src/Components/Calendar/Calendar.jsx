@@ -127,13 +127,13 @@ const Calendar = () => {
   }, [loading]);
 
   return (
-    <div className='mt-[2rem] flex flex-col gap-[2rem]'>
+    <div className='mt-[2rem] flex flex-col gap-[2rem] calendar-container'>
       <div className='flex innerWidth justify-end gap-[1rem]'>
         <button
           className='add-event bg-red px-3 py-2 rounded-lg transition-all duration-300 ease-in hover:scale-110 flex justify-center items-center outline-none'
           onClick={() => setAddModalOpen(true)}
         >
-          <p className='text-white flex items-center justify-center gap-2 font-semibold'>
+          <p className='text-white flex items-center justify-center gap-2 font-semibold add-evt'>
             <BsFillPlusCircleFill />
             Add Event
           </p>
@@ -143,7 +143,7 @@ const Calendar = () => {
           className='add-event bg-red px-3 py-2 rounded-lg transition-all duration-300 ease-in hover:scale-110 flex justify-center items-center outline-none'
           onClick={() => onViewEventClick(events)}
         >
-          <p className='text-white flex items-center justify-center gap-2 font-semibold'>
+          <p className='text-white flex items-center justify-center gap-2 font-semibold view-evt'>
             <BsFillPlusCircleFill />
             View Event
           </p>

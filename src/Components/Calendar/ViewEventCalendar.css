@@ -1,0 +1,20 @@
+@media (max-width: 640px) {
+  .viewModal {
+    width: 85%;
+    height: 80%;
+    top: 1rem;
+  }
+  .viewModal h2 {
+    font-size: medium;
+  }
+  .viewModal > table > thead th {
+    font-size: 0.9rem;
+  }
+  .viewModal > table > tbody td {
+    font-size: 0.8rem;
+  }
+  .viewModal > table > tbody > tr > td:first-child {
+    padding-left: 0.3rem;
+    width: 20px;
+  }
+}

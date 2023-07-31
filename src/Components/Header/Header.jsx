@@ -4,15 +4,17 @@ import { Link } from "react-router-dom";
 import { BsCart } from "react-icons/bs";
 import { BiMenuAltRight } from "react-icons/bi";
 import "./Header.css";
+import { useSelector } from "react-redux";
 //import { createItem, getAllItems } from "../../services/api.service";
 
-const Header = ({ count }) => {
+const Header = () => {
+  const { count } = useSelector((state) => state.counter);
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <div className='header-wrapper padding innerWidth bg-[#000000] overflow-hidden'>
       <div className='message text-[#8c8c8c] flex justify-between items-center text-sm mb-2 font-bold flex-wrap'>
-        <span>118 Stephen St., Lemont, IL, United States, Illinois</span>
+        <span>118 Stephen St, Lemont, IL, United States, Illinois</span>
         <span>+1 630-312-8152</span>
       </div>
 
@@ -60,20 +62,6 @@ const Header = ({ count }) => {
               Make a reservation
             </Link>
           </div>
-
-          {/* <button
-            onClick={() => {
-              createItem({
-                name: "Dan",
-                image: "no no",
-                description: "lalalalalaal",
-                price: 0,
-              });
-              getAllItems();
-            }}
-          >
-            click me here
-          </button> */}
         </div>
 
         <div

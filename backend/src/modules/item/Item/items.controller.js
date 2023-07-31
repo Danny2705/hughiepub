@@ -3,7 +3,7 @@ const Item = require("../../../models/items.model");
 // Fetch all items
 const getAllItems = async (req, res) => {
   try {
-    const items = await Item.find();
+    const items = await Item.find().sort({ createAt: 1 });
     res.json(items);
   } catch (error) {
     res.status(500).json({ error: "Internal server error" });
@@ -26,17 +26,19 @@ const getItemById = async (req, res) => {
 
 // Create a new item
 const createItem = async (req, res) => {
-  console.log(req.body);
-  const { name, description, price } = req.body;
   try {
+    // console.log(req.body);
+    const { name, price, quantity } = req.body;
+    const desc = req.body.description;
     const newItem = new Item({
       name,
-      image,
-      description,
+      desc,
       price,
+      quantity,
     });
-    const savedItem = await newItem.save();
-    res.json(savedItem);
+    // console.log(name, desc, price);
+    await newItem.save();
+    res.json({ status: "success" });
   } catch (error) {
     res.status(500).json({ error: "Internal server error" });
   }
@@ -45,12 +47,11 @@ const createItem = async (req, res) => {
 // Update an existing item by ID
 const updateItem = async (req, res) => {
   const { id } = req.params;
-  const { name, description, price } = req.body;
+  const { name, desc, price } = req.body;
   try {
     const updatedItem = await Item.findByIdAndUpdate(id, {
       name,
-      image,
-      description,
+      desc,
       price,
     });
     if (!updatedItem) {
