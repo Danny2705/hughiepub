@@ -16,6 +16,10 @@
   width: 100%;
 }
 
+.form div {
+  width: 100%;
+}
+
 .rdt > input {
   text-align: center;
 }
@@ -24,6 +28,26 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 0.15rem;
+}
+
+.rdtPrev span,
+.rdtNext span {
+  font-size: 1.5rem;
+}
+
+.rdtTime {
+  display: flex;
+  justify-content: center;
+}
+
+.rdtDay {
+  text-align: center;
+}
+
+.rdtTimeToggle {
+  text-align: center;
+  font-weight: bold;
 }
 
 .rdtCounters {
@@ -52,6 +76,10 @@
   display: flex;
 }
 
+.rdtCount {
+  text-align: center;
+}
+
 @media (max-width: 640px) {
   .addModal {
     padding: 0;
@@ -78,5 +106,8 @@
     font-size: smaller;
     padding: 0.15rem 0.5rem;
     margin-bottom: 0.5rem;
+  }
+  .rdtTimeToggle {
+    font-size: 0.85rem;
   }
 }

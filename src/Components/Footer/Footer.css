@@ -5,10 +5,12 @@
     justify-content: center;
     align-items: center;
     width: 100%;
+    font-size: 0.9rem;
   }
   .list {
     width: 90%;
-    margin: 1.5rem 0;
+    margin: 0.8rem 0;
+    font-size: 0.8rem;
   }
   .address {
     display: flex;
@@ -17,5 +19,10 @@
     flex-wrap: wrap;
     width: 100%;
     gap: 0.5rem;
+    font-size: 0.6rem;
+  }
+  .footer-container img {
+    width: 100px;
+    margin-top: 1rem;
   }
 }

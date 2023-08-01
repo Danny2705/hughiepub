@@ -18,7 +18,7 @@ const Event = () => {
 
           <div className='flex justify-center items-center'>
             <div className='flex items-start justify-center flex-col border-l-4 border-red gap-5 px-5 h-fit'>
-              <div className='font-bold text-xl'>Cornhole Tournament</div>
+              <div className='font-bold text-xl title'>Cornhole Tournament</div>
               <div className='space-y-4 w-[17rem]'>
                 <p>
                   Get ready for an exhilarating evening of friendly competition
@@ -31,7 +31,7 @@ const Event = () => {
               </div>
               <Link
                 to='/events'
-                className='bg-red px-3 py-1.5 rounded-md justify-center my-0 mx-auto items-center uppercase text-[1rem] font-[600] text-white transition-all duration-300 ease-in hover:scale-110'
+                className='bg-red px-3 py-1.5 rounded-md justify-center my-0 mx-auto items-center uppercase text-[1rem] font-[600] text-white transition-all duration-300 ease-in hover:scale-110 view-evt'
               >
                 View Event
               </Link>
@@ -46,7 +46,7 @@ const Event = () => {
 
           <div className='content flex justify-center items-center'>
             <div className='flex items-start justify-center  flex-col border-l-4 border-red gap-5 px-5 h-fit'>
-              <div className='font-bold text-xl'>Live Acoustic Rock</div>
+              <div className='font-bold text-xl title'>Live Acoustic Rock</div>
               <div className='space-y-4 w-[17rem]'>
                 <p>
                   Prepare to be blown away by an electrifying night of live rock
@@ -62,7 +62,7 @@ const Event = () => {
               </div>
               <Link
                 to='/events'
-                className='bg-red px-3 py-1.5 rounded-md justify-center my-0 mx-auto items-center uppercase text-[1rem] font-[600] text-white transition-all duration-300 ease-in hover:scale-110'
+                className='bg-red px-3 py-1.5 rounded-md justify-center my-0 mx-auto items-center uppercase text-[1rem] font-[600] text-white transition-all duration-300 ease-in hover:scale-110 view-evt'
               >
                 View Event
               </Link>

@@ -48,7 +48,7 @@ const MenuItem = ({ category, name, desc, price, image, handleCount }) => {
               title='Add to Cart'
               onClick={handleAddToCart}
             >
-              <AiFillPlusCircle />
+              {/* <AiFillPlusCircle /> */}
             </button>
           </div>
         </div>

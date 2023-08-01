@@ -1,3 +1,15 @@
+@media (max-width: 912px) {
+  .knotLogo img {
+    width: 300px;
+  }
+  .intro-title {
+    font-size: 2rem;
+  }
+  .intro-des {
+    font-size: 1.15rem;
+  }
+}
+
 @media (max-width: 640px) {
   .intro-container {
     flex-direction: column;
@@ -14,6 +26,9 @@
     font-size: 0.9rem;
   }
   .knotLogo {
-    width: 300px;
+    width: 230px;
+  }
+  .knotLogo > img {
+    width: 100%;
   }
 }

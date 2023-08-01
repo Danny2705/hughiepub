@@ -1,7 +1,7 @@
 import { React, useState } from "react";
 import Logo from "../../Assets/Images/logo.png";
 import { Link } from "react-router-dom";
-import { BsCart } from "react-icons/bs";
+// import { BsCart } from "react-icons/bs";
 import { BiMenuAltRight } from "react-icons/bi";
 import "./Header.css";
 import { useSelector } from "react-redux";
@@ -26,7 +26,7 @@ const Header = () => {
           </div>
         </Link>
 
-        <div className='nav flex items-center justify-between w-[600px]'>
+        <div className='nav flex items-center justify-between'>
           <div className='nav-menu text-[#ffffff] flex items-center gap-5 text-[1rem] uppercase font-[600] tracking-wider'>
             <Link
               to='/events'
@@ -50,17 +50,17 @@ const Header = () => {
 
           <div className='nav-right text-[#ffffff] flex items-center gap-5'>
             <Link to='/cart' className='relative'>
-              <BsCart />
+              {/* <BsCart />
               <span className='absolute top-[-22px] right-0 text-[#ffae62] text-[0.9rem]'>
                 {count}
-              </span>
+              </span> */}
             </Link>
-            <Link
+            {/* <Link
               to='/reserve'
               className='bg-red px-4 py-1 rounded-md items-center uppercase text-[1rem] font-[600] transition-all duration-300 ease-in hover:scale-110'
             >
               Make a reservation
-            </Link>
+            </Link> */}
           </div>
         </div>
 
@@ -95,19 +95,19 @@ const Header = () => {
             </Link>
           </div>
 
-          <div className='nav-right text-[#ffffff] flex flex-col items-center gap-4 justify-start mt-7'>
+          <div className='nav-right text-[#ffffff] flex flex-col items-center gap-4 justify-start'>
             <Link to='/cart' className='relative'>
-              <BsCart />
+              {/* <BsCart />
               <span className='absolute bottom-2.5 right-0 text-[#ffae62] text-[0.9rem]'>
                 {count}
-              </span>
+              </span> */}
             </Link>
-            <Link
+            {/* <Link
               to='/reserve'
               className='bg-red px-1 py-1 rounded-md items-center uppercase text-[1rem] font-[600] transition-all duration-300 ease-in hover:scale-110 flex text-center'
             >
               Make a reservation
-            </Link>
+            </Link> */}
           </div>
         </div>
       )}

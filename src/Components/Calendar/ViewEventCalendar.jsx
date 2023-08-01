@@ -9,7 +9,7 @@ const ViewEventModal = ({ isOpen, onClose, events }) => {
       isOpen={isOpen}
       onRequestClose={onClose}
       contentLabel='Event Modal'
-      className='viewModal w-[40rem] bg-yellow left-[8%] py-6 absolute flex justify-start items-center rounded-xl flex-col gap-[0.8rem] h-full'
+      className='viewModal w-[80%] bg-yellow left-[8%] py-6 absolute flex justify-start items-center rounded-xl flex-col gap-[0.8rem] h-full'
     >
       <h2 className='w-full, flex items-center justify-center text-xl text-blue font-bold'>
         Event Details

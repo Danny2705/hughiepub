@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emailjs/browser": "^3.11.0",
     "@fullcalendar/daygrid": "^6.1.8",
     "@fullcalendar/react": "^6.1.8",
     "@reduxjs/toolkit": "^1.9.5",
@@ -12,6 +13,7 @@
     "axios": "^1.4.0",
     "bcrypt": "^5.1.0",
     "cors": "^2.8.5",
+    "emailjs": "^4.0.2",
     "moment": "^2.29.4",
     "mongoose": "^7.3.1",
     "nodemon": "^2.0.22",

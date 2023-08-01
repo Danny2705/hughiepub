@@ -25,11 +25,11 @@ export default function EventModal({ isOpen, onClose, onEventAdded }) {
     <Modal
       isOpen={isOpen}
       onRequestClose={onClose}
-      className='addModal w-[20rem] bg-yellow left-[8%] py-6 absolute flex justify-center items-center rounded-xl'
+      className='addModal w-[20rem] bg-yellow left-[8%] pb-6 absolute flex justify-center items-center rounded-xl'
     >
       <form
         onSubmit={onSubmit}
-        className='flex flex-col justify-center items-center w-full'
+        className='flex flex-col justify-center items-center w-full form'
       >
         <div>
           <label className='flex items-center justify-center font-bold text-blue my-2'>
@@ -40,7 +40,7 @@ export default function EventModal({ isOpen, onClose, onEventAdded }) {
             placeholder='Type the tile of the event'
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            className='outline-none placeholder-black p-[0.25rem] rounded-lg'
+            className='outline-none placeholder-black p-[0.25rem] rounded-lg flex mx-auto'
             required
           />
         </div>

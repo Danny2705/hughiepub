@@ -23,20 +23,25 @@
     font-size: 0.6rem;
   }
   .header-wrapper {
-    padding: 2rem 1.5rem;
+    padding: 1.2rem 1.5rem;
   }
-  .header-container>:first-child {
+  .header-container > :first-child {
     width: fit-content;
   }
   .font-irish-grover {
-    font-size: 1.1rem;
-    width: 6rem;
+    font-size: 0.9rem;
+    width: 4rem;
   }
   .logo {
     width: 90px;
   }
-  .nav-menu>*, .nav-right> :nth-child(2), .nav-right> :last-child {
+  .nav-menu > *,
+  .nav-right > :nth-child(2),
+  .nav-right > :last-child {
     font-size: 0.8rem;
+  }
+  .header-container img {
+    width: 70px;
   }
 }
 

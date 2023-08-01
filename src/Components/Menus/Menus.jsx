@@ -15,7 +15,10 @@ const Menu = () => {
           {MenuItems.items.map((item, i) => {
             return (
               <div className='menu-row flex items-center justify-around flex-wrap my-10 mx-auto gap-[12rem]'>
-                <div className=' flex-1 menu-left flex items-center justify-end' key={i}>
+                <div
+                  className=' flex-1 menu-left flex items-center justify-end '
+                  key={i}
+                >
                   <img src={item.image} alt={item.name} width={350} />
                 </div>
 
@@ -33,7 +36,7 @@ const Menu = () => {
 
                   <Link
                     to='/menu'
-                    className='bg-white px-3 py-1.5 rounded-md justify-center items-center uppercase text-[1rem] font-[600] text-red transition-all duration-300 ease-in hover:scale-110 btn'
+                    className='bg-white px-3 py-1.5 rounded-md justify-center items-center uppercase text-[1rem] font-[600] text-red transition-all duration-300 ease-in hover:scale-110 btn view-menu'
                   >
                     View Menu
                   </Link>

@@ -1,12 +1,41 @@
-@media (max-width: 900px) {
+@media (max-width: 912px) {
   .event-row {
-    flex-direction: column;
     gap: 2rem;
+    display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
   }
-  .content {
-    border-bottom: 4px solid red;
+  .event-title {
+    font-size: 2rem;
+  }
+  .event-container p {
+    font-size: 1.15rem;
+  }
+  .event-container .title {
+    font-size: 1.3rem;
+  }
+}
+
+@media (width: 768px) {
+  .event-row {
+    gap: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .event-row img {
+    width: 350px;
+  }
+  .event-title {
+    font-size: 2rem;
+  }
+  .event-container p {
+    font-size: 1rem;
+  }
+  .event-container .title {
+    font-size: 1.3rem;
   }
 }
 
@@ -15,5 +44,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 1.3rem;
+  }
+  .event-container p {
+    font-size: 0.9rem;
+  }
+  .event-container .title {
+    font-size: 1rem;
+  }
+  .event-container .view-evt {
+    font-size: 0.8rem;
   }
 }
