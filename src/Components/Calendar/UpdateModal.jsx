@@ -49,7 +49,7 @@ const UpdateModal = ({
             >
               Update
             </button>
-            {/* Delete button */}
+
             <button
               onClick={handleDelete}
               className='bg-red border-2 border-white px-3 py-1 rounded-md justify-center items-center uppercase text-[1rem] font-[600] text-white transition-all duration-300 ease-in hover:scale-105 flex mx-auto mt-2'

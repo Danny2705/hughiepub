@@ -33,9 +33,9 @@ const Calendar = () => {
   };
 
   const onEventAdded = async (event) => {
-    console.log(event);
+    // console.log(event);
     // let calendarApi = calendarRef.current.getApi();
-    console.log("event", event);
+    // console.log("event", event);
     await addEvent({
       start: moment(event.start).toDate(),
       end: moment(event.end).toDate(),

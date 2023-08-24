@@ -65,7 +65,7 @@ export const deleteItem = async (id) => {
 };
 
 export async function addEvent(data) {
-  console.log("data", data);
+  // console.log("data", data);
   return httpClient.post("/calendar/create-event", data);
 }
 
@@ -74,7 +74,7 @@ export async function getEvent() {
 }
 
 export const updateEvent = async (id, updatedEvent) => {
-  console.log(id);
+  // console.log(id);
   return httpClient
     .put(`/calendar/update-event/${id}`, updatedEvent)
     .then((response) => {
@@ -86,7 +86,7 @@ export const updateEvent = async (id, updatedEvent) => {
 };
 
 export const deleteEvent = async (id) => {
-  console.log(id);
+  // console.log(id);
   return httpClient
     .delete(`/calendar/delete-event/${id}`)
     .then((response) => {

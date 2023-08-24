@@ -1,0 +1,8 @@
+.register {
+  background-image: url("https://th.bing.com/th/id/R.78737c60508327787420b7a19b0a039d?rik=%2b%2figcvBJBaaYPQ&riu=http%3a%2f%2fwallup.net%2fwp-content%2fuploads%2f2015%2f12%2f197828-mountain-beach-summer-sand-Norway-sunset-sea-grass-island-nature-landscape.jpg&ehk=Iqx6%2b58lcvzvQEF4EdfCNtoBourz0vTzLV7tw9OlcFQ%3d&risl=&pid=ImgRaw&r=0");
+  object-fit: contain;
+  width: 100%; /* Adjust the width as needed */
+  height: 100vh; /* Adjust the height as needed */
+  background-size: cover;
+  background-repeat: no-repeat;
+}

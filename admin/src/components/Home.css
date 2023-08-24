@@ -1,0 +1,52 @@
+.menu-icon {
+  display: none;
+}
+
+@media (max-width: 910px) {
+  .menu-icon {
+    display: block;
+  }
+  .nav {
+    display: none;
+  }
+}
+
+@media (min-width: 900px) {
+  .nav-burger {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .message {
+    display: flex;
+    font-size: 0.6rem;
+  }
+  .header-wrapper {
+    padding: 1.2rem 1.5rem;
+  }
+  .header-container > :first-child {
+    width: fit-content;
+  }
+  .font-irish-grover {
+    font-size: 0.9rem;
+    width: 4rem;
+  }
+  .logo {
+    width: 90px;
+  }
+  .nav-menu > *,
+  .nav-right > :nth-child(2),
+  .nav-right > :last-child {
+    font-size: 0.8rem;
+  }
+  .header-container img {
+    width: 70px;
+  }
+}
+
+@media (max-width: 414px) {
+  .message {
+    font-size: 0.5rem;
+  }
+}

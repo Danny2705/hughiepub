@@ -1,0 +1,75 @@
+.fc .fc-toolbar.fc-header-toolbar {
+  padding: 0 3rem;
+}
+
+.fc-button-group {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.fc-event-main,
+.fc-daygrid-event-harness {
+  cursor: pointer;
+}
+
+.fc-next-button,
+.fc-prev-button {
+  padding: 0.25rem;
+  background-color: red;
+}
+
+.fc-h-event .fc-event-main-frame {
+  background-color: yellowgreen;
+}
+
+.fc-h-event .fc-event-time {
+  color: red;
+}
+
+.fc-h-event .fc-event-title {
+  color: blue;
+}
+
+@media (max-width: 640px) {
+  .fc .fc-toolbar-title {
+    font-size: 1rem;
+    font-weight: 700;
+  }
+  .fc .fc-toolbar.fc-header-toolbar {
+    padding: 0 1rem;
+  }
+  .add-evt,
+  .view-evt {
+    font-size: 0.6rem;
+  }
+  .calendar-container {
+    gap: 1rem;
+  }
+  .calendar-container > div:first-child {
+    gap: 0.5rem;
+  }
+  .fc .fc-button {
+    font-size: 0.8rem;
+    padding: 0.2rem 0.45rem;
+  }
+  .fc th,
+  .fc-h-event .fc-event-title,
+  .fc-daygrid-day-top > a,
+  .fc-h-event .fc-event-time,
+  .fc-event-time {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .fc .fc-button {
+    padding: 0.1rem 0.2rem;
+  }
+  .fc-icon {
+    width: 22px;
+    height: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
