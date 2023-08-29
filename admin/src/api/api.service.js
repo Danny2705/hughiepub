@@ -1,7 +1,8 @@
 import axios from "axios";
 
 const httpClient = axios.create({
-  baseURL: "http://localhost:5000/api",
+  // baseURL: "http://localhost:5000/api"
+  baseURL: process.env.API_URL || "https://hughie-api-vercel.vercel.app/api",
 });
 
 export const signUp = async (user) => {
