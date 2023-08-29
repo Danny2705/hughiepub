@@ -45,9 +45,9 @@ const EventPage = () => {
                     <p className='flex items-center justify-end'>
                       <div className='text-lg'>{prop.desc}</div>
                     </p>
-                    <button className='bg-red border-2 border-white px-3 py-1.5 rounded-md justify-center items-center uppercase text-[1rem] font-[600] text-white transition-all duration-300 ease-in hover:scale-110 flex mx-auto'>
+                    {/* <button className='bg-red border-2 border-white px-3 py-1.5 rounded-md justify-center items-center uppercase text-[1rem] font-[600] text-white transition-all duration-300 ease-in hover:scale-110 flex mx-auto'>
                       View Calendar
-                    </button>
+                    </button> */}
                   </div>
                 </div>
               );

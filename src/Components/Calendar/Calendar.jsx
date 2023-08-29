@@ -2,11 +2,8 @@ import React from "react";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import { useState } from "react";
-import AddEventCalendar from "./AddEventCalendar";
-import moment from "moment";
 import {
   getEvent,
-  addEvent,
   updateEvent,
   deleteEvent,
   getEventById,
@@ -24,24 +21,11 @@ const Calendar = () => {
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [selectedEventForView, setSelectedEventForView] = useState(null);
   const [viewModalOpen, setViewModalOpen] = useState(false);
-  const [addModalOpen, setAddModalOpen] = useState(false);
   const [updateModalOpen, setUpdateModalOpen] = useState(false);
 
   const onViewEventClick = (event) => {
     setSelectedEventForView(event);
     setViewModalOpen(true);
-  };
-
-  const onEventAdded = async (event) => {
-    // console.log(event);
-    // let calendarApi = calendarRef.current.getApi();
-    // console.log("event", event);
-    await addEvent({
-      start: moment(event.start).toDate(),
-      end: moment(event.end).toDate(),
-      title: event.title,
-    });
-    setLoading(true);
   };
 
   const onDateClick = (info) => {
@@ -80,29 +64,6 @@ const Calendar = () => {
       console.error("Error updating event:", error);
     }
   };
-
-  // const handleUpdateEvent = async (updatedEvent) => {
-  //   try {
-  //     await updateEvent(updatedEvent.id, {
-  //       title: updatedEvent.title,
-  //       start: updatedEvent.start.toISOString(),
-  //       end: updatedEvent.end.toISOString(),
-  //     });
-
-  //     // const calendarApi = calendarRef.current.getApi();
-  //     // const eventToUpdate = calendarApi.getEventById(updatedEvent.id);
-  //     if (eventToUpdate) {
-  //       eventToUpdate.setProp("title", updatedEvent.title);
-  //       eventToUpdate.setStart(updatedEvent.start);
-  //       eventToUpdate.setEnd(updatedEvent.end);
-  //     }
-
-  //     setUpdateModalOpen(false);
-  //     setLoading(true);
-  //   } catch (error) {
-  //     console.error("Error updating event:", error);
-  //   }
-  // };
 
   const handleDeleteEvent = async () => {
     try {
@@ -144,7 +105,6 @@ const Calendar = () => {
           plugins={[dayGridPlugin]}
           events={events}
           initialView='dayGridMonth'
-          eventAdd={(event) => addEvent(event)}
           eventClick={onEventClick}
           dateClick={onDateClick}
           className='bg-red'
@@ -155,14 +115,6 @@ const Calendar = () => {
         isOpen={viewModalOpen}
         onClose={() => setViewModalOpen(false)}
         events={events}
-      />
-
-      <AddEventCalendar
-        isOpen={addModalOpen}
-        onClose={() => {
-          setAddModalOpen(false);
-        }}
-        onEventAdded={(event) => onEventAdded(event)}
       />
 
       <UpdateModal
