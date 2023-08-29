@@ -8,11 +8,11 @@ import Sandwich from "../../Assets/Images/sandwich.png";
 import Pepsi from "../../Assets/Images/pepsi.png";
 import BurgerAndFries from "../../Assets/Images/burgerAndFries.png";
 import Burger from "../../Assets/Images/burger.png";
-import MenuItem from "./MenuItem";
 import { useState } from "react";
 import { useEffect } from "react";
 import { getAllItems } from "../../services/api.service";
 import Header from "../../Components/Header/Header";
+import MenuCategory from "../../Components/MenuCategory/MenuCategory";
 
 export const getCategoryImage = (category) => {
   switch (category) {
@@ -63,7 +63,7 @@ const Menu = () => {
         </div>
         <div className='menuList-container px-[9rem] py-[3rem] bg-black innerWidth flex flex-col items-center justify-center'>
           <div>
-            {menuItems.map((item, i) => (
+            {/* {menuItems.map((item, i) => (
               <MenuItem
                 key={i}
                 category={
@@ -100,7 +100,39 @@ const Menu = () => {
                     : ""
                 )}
               />
-            ))}
+            ))} */}
+            <div>
+              <MenuCategory
+                categoryName='APPETIZERS'
+                menuItems={menuItems}
+                getCategoryImage={getCategoryImage}
+              />
+              <MenuCategory
+                categoryName='SOUP & SALAD'
+                menuItems={menuItems}
+                getCategoryImage={getCategoryImage}
+              />
+              <MenuCategory
+                categoryName='HALF & HALF'
+                menuItems={menuItems}
+                getCategoryImage={getCategoryImage}
+              />
+              <MenuCategory
+                categoryName='BEVERAGES'
+                menuItems={menuItems}
+                getCategoryImage={getCategoryImage}
+              />
+              <MenuCategory
+                categoryName='SANDWICHES'
+                menuItems={menuItems}
+                getCategoryImage={getCategoryImage}
+              />
+              <MenuCategory
+                categoryName='ENTRÉE'
+                menuItems={menuItems}
+                getCategoryImage={getCategoryImage}
+              />
+            </div>
           </div>
           <div className='addText text-yellow flex flex-col justify-center items-center gap-[1rem] w-[60%] mt-2'>
             <span className='text-center'>
