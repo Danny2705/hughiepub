@@ -9,15 +9,15 @@ const UpdateModal = ({
   handleUpdateEvent,
   handleDeleteEvent,
 }) => {
-  const handleUpdate = () => {
-    handleUpdateEvent(selectedEvent);
-    onClose();
-  };
+  // const handleUpdate = () => {
+  //   handleUpdateEvent(selectedEvent);
+  //   onClose();
+  // };
 
-  const handleDelete = () => {
-    handleDeleteEvent();
-    onClose();
-  };
+  // const handleDelete = () => {
+  //   handleDeleteEvent();
+  //   onClose();
+  // };
 
   return (
     <Modal
@@ -42,7 +42,7 @@ const UpdateModal = ({
             <span className='font-bold'>End:</span>{" "}
             {moment(selectedEvent.end).format("DD-MM-YYYY, HH:mm")}
           </p>
-          <div className='flex justify-start items-center'>
+          {/* <div className='flex justify-start items-center'>
             <button
               onClick={handleUpdate}
               className='bg-red border-2 border-white px-3 py-1 rounded-md justify-center items-center uppercase text-[1rem] font-[600] text-white transition-all duration-300 ease-in hover:scale-105 flex mx-auto mt-2'
@@ -56,7 +56,7 @@ const UpdateModal = ({
             >
               Delete
             </button>
-          </div>
+          </div> */}
         </div>
       )}
     </Modal>

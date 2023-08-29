@@ -1,0 +1,58 @@
+.rdt {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  height: 236px;
+  cursor: pointer;
+}
+
+.rdt > input {
+  width: 100%;
+  text-align: center;
+  border-radius: 10px;
+  padding: 3px 0;
+  outline: none;
+}
+
+.rdt > .rdtPicker,
+.rdtDays > table,
+.rdtTime > table,
+.rdtMonths > table,
+.rdtYears > table {
+  width: 100%;
+}
+
+.rdtPrev,
+.rdtNext {
+  font-size: large;
+}
+
+.rdtTime {
+  margin-top: 15px;
+}
+
+.rdtDays .rdtDay,
+.rdtSwitch,
+.rdtMonth {
+  text-align: center;
+}
+
+.rdtTimeToggle {
+  text-align: center;
+  font-weight: bold;
+}
+
+.rdtCounters {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.rdtCounter {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}

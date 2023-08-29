@@ -71,23 +71,24 @@ const Header = () => {
         <div className='nav-burger flex flex-col items-center justify-start absolute right-9 top-50 w-[12rem] bg-black h-[fit-content] py-5 rounded-xl border border-white z-50'>
           <div className='nav-menu text-[#ffffff] flex flex-col items-center gap-5 text-[1rem] uppercase font-[600] tracking-wider'>
             <Link
-              to='/events'
+              to='/create-event'
               className='transition-all duration-300 ease-in hover:text-orange'
             >
-              Events
+              Add Event
             </Link>
             <Link
-              to='/menu'
+              to='/create-menu'
               className='transition-all duration-300 ease-in hover:text-orange'
             >
-              Menu
+              Add Menu
             </Link>
-            <Link
-              to='/contact'
-              className='transition-all duration-300 ease-in hover:text-orange'
+            <span className='text-yellow'> {user.name}</span>
+            <button
+              onClick={handleLogout}
+              className='bg-red px-3 py-2 rounded-lg transition-all duration-300 ease-in hover:scale-110 flex justify-center items-center outline-none'
             >
-              Contact
-            </Link>
+              Log Out
+            </button>
           </div>
         </div>
       )}

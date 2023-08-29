@@ -1,0 +1,8 @@
+@media screen and (max-width: 640px) {
+  .resume .upload-resume {
+    width: 100%;
+  }
+  .resume form {
+    width: 100%;
+  }
+}

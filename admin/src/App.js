@@ -7,6 +7,8 @@ import { useSelector } from "react-redux";
 import CreateEvent from "./components/CreateEvent";
 import CreateMenu from "./components/CreateMenu";
 import AddEvent from "./components/AddEvent";
+import UpdateEvent from "./components/UpdateEvent";
+import UpdateMenu from "./components/UpdateMenu";
 
 function App() {
   const user = useSelector((state) => state.auth.user);
@@ -26,6 +28,8 @@ function App() {
         <Route path='/create-event' element={<CreateEvent />} />
         <Route path='/create-menu' element={<CreateMenu />} />
         <Route path='/add-event' element={<AddEvent />} />
+        <Route path='/update-event/:id' element={<UpdateEvent />} />
+        <Route path='/update-menu/:id' element={<UpdateMenu />} />
       </Routes>
     </div>
   );

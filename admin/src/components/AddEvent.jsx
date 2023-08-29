@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import { addEvent } from "../api/api.service";
 import moment from "moment";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-hot-toast";
+import "./AddEvent.css";
 
 export default function AddEvent() {
   const navigate = useNavigate();
@@ -18,21 +20,25 @@ export default function AddEvent() {
       end: moment(end).toDate(),
       title: title,
     });
+    toast.success("Add event successfully");
     navigate("/");
   };
 
   return (
-    <div className='flex flex-col justify-center items-start w-full h-screen'>
-      <Link to='/create-event' className='text text-blue underline'>
-        <span className='text-left'>Turn Back</span>
+    <div className='flex flex-col justify-center items-center w-full h-screen mx-auto'>
+      <Link
+        to='/create-event'
+        className='text text-blue underline w-[900px] pl-2 mb-4'
+      >
+        <span className='text-xl'>Turn Back</span>
       </Link>
-      <div className='w-[70%] mx-auto flex items-center justify-center'>
-        <table className='bg-yellow rounded-xl'>
+      <div className='flex items-center justify-center'>
+        <table className='bg-yellow rounded-xl  w-[900px]'>
           <thead>
             <tr>
-              <th className='p-4 font-bold text-blue'>Title</th>
-              <th className='p-4 font-bold text-blue'>Start Date</th>
-              <th className='p-4 font-bold text-blue'>End Date</th>
+              <th className='px-4 pb-2 pt-5 font-bold text-blue'>Title</th>
+              <th className='px-4 pb-2 pt-5 font-bold text-blue'>Start Date</th>
+              <th className='px-4 pb-2 pt-5 font-bold text-blue'>End Date</th>
             </tr>
           </thead>
           <tbody>
@@ -41,6 +47,7 @@ export default function AddEvent() {
                 <textarea
                   placeholder='Type the title of the event'
                   value={title}
+                  style={{ height: "236px" }}
                   onChange={(e) => setTitle(e.target.value)}
                   className='w-full p-2 outline-none rounded-lg'
                   required

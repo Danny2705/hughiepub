@@ -4,14 +4,9 @@ import moment from "moment";
 import { BsFillPlusCircleFill } from "react-icons/bs";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
-import {
-  getEvent,
-  addEvent,
-  updateEvent,
-  deleteEvent,
-  getEventById,
-} from "../api/api.service";
+import { getEvent, addEvent, getEventById } from "../api/api.service";
 import { Link } from "react-router-dom";
+import "./CreateEvent.css";
 
 const CreateEvent = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -26,15 +21,6 @@ const CreateEvent = () => {
   const onViewEventClick = (event) => {
     setSelectedEventForView(event);
     setViewModalOpen(true);
-  };
-
-  const onEventAdded = async (event) => {
-    await addEvent({
-      start: moment(event.start).toDate(),
-      end: moment(event.end).toDate(),
-      title: event.title,
-    });
-    setLoading(true);
   };
 
   const onDateClick = (info) => {
@@ -55,36 +41,6 @@ const CreateEvent = () => {
     setUpdateModalOpen(true);
   };
 
-  const handleUpdateEvent = async (updatedEvent) => {
-    try {
-      await updateEvent(updatedEvent.id, {
-        title: updatedEvent.title,
-        start: updatedEvent.start.toISOString(),
-        end: updatedEvent.end.toISOString(),
-      });
-
-      const updatedEvents = events.map((event) =>
-        event.id === updatedEvent.id ? updatedEvent : event
-      );
-      setEvents(updatedEvents);
-
-      setUpdateModalOpen(false);
-    } catch (error) {
-      console.error("Error updating event:", error);
-    }
-  };
-
-  const handleDeleteEvent = async () => {
-    try {
-      await deleteEvent(selectedEvent.id);
-
-      setUpdateModalOpen(false);
-      setLoading(true);
-    } catch (error) {
-      console.error("Error deleting event:", error);
-    }
-  };
-
   useEffect(() => {
     async function handleDatesSet() {
       const res = await getEvent();
@@ -97,10 +53,10 @@ const CreateEvent = () => {
   }, [loading]);
 
   return (
-    <div className='flex flex-col gap-[2rem] calendar-container'>
+    <div className='flex flex-col calendar-container'>
       <Header />
-      <div>
-        <div className='flex innerWidth justify-end gap-[1rem] padding'>
+      <div className='bg-yellow'>
+        <div className='flex innerWidth justify-end gap-[1rem] padding mt-2'>
           <button
             className='add-event bg-red px-3 py-2 rounded-lg transition-all duration-300 ease-in hover:scale-110 flex justify-center items-center outline-none'
             onClick={() => setAddModalOpen(true)}
@@ -113,7 +69,7 @@ const CreateEvent = () => {
               Add Event
             </Link>
           </button>
-          <button
+          {/* <button
             className='add-event bg-red px-3 py-2 rounded-lg transition-all duration-300 ease-in hover:scale-110 flex justify-center items-center outline-none'
             onClick={() => onViewEventClick(events)}
           >
@@ -121,18 +77,19 @@ const CreateEvent = () => {
               <BsFillPlusCircleFill />
               View Event
             </p>
-          </button>
+          </button> */}
         </div>
-        <div className='relative z-0 bg-white text-black rounded-xl py-4 padding'>
-          <FullCalendar
-            plugins={[dayGridPlugin]}
-            events={events}
-            initialView='dayGridMonth'
-            eventAdd={(event) => addEvent(event)}
-            eventClick={onEventClick}
-            dateClick={onDateClick}
-            className='bg-red'
-          />
+        <div className='relative z-0 bg-yellow text-black py-4 padding'>
+          <div className='bg-white rounded-xl py-4'>
+            <FullCalendar
+              plugins={[dayGridPlugin]}
+              events={events}
+              initialView='dayGridMonth'
+              eventAdd={(event) => addEvent(event)}
+              eventClick={onEventClick}
+              dateClick={onDateClick}
+            />
+          </div>
         </div>
       </div>
     </div>

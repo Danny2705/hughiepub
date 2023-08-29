@@ -7,7 +7,8 @@ const createEvent = async (req, res) => {
 };
 
 const getEvent = async (req, res) => {
-  const events = await Event.find();
+  const events = await Event.find().sort({ createAt: 1 });
+  // const events = await Event.find();
   res.send(events);
 };
 

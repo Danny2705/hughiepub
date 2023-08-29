@@ -13,10 +13,8 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { getAllItems } from "../../services/api.service";
 import Header from "../../Components/Header/Header";
-import { useDispatch, useSelector } from "react-redux";
-import { increment } from "../../redux/counter";
 
-const getCategoryImage = (category) => {
+export const getCategoryImage = (category) => {
   switch (category) {
     case "APPETIZERS":
       return FoodPic;
@@ -36,12 +34,9 @@ const getCategoryImage = (category) => {
 };
 
 const Menu = () => {
-  const { count } = useSelector((state) => state.counter);
-  const dispatch = useDispatch();
   const [menuItems, setMenuItems] = useState([]);
 
   useEffect(() => {
-    // Fetch data from the database when the component mounts
     fetchMenuItems();
   }, []);
 
@@ -54,13 +49,10 @@ const Menu = () => {
     }
   };
 
-  const handleCount = () => {
-    dispatch(increment());
-  };
   return (
     <div className='menu-wrapper'>
       <div className='menu-container'>
-        <Header count={count} />
+        <Header />
         <div className='image-container innerWidth h-[75vh]'>
           <img
             src={MenuImage}
@@ -74,7 +66,6 @@ const Menu = () => {
             {menuItems.map((item, i) => (
               <MenuItem
                 key={i}
-                handleCount={handleCount}
                 category={
                   item.name === "Some of the Day"
                     ? "SOUP & SALAD"

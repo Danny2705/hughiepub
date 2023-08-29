@@ -4,11 +4,8 @@ import { Link } from "react-router-dom";
 // import { BsCart } from "react-icons/bs";
 import { BiMenuAltRight } from "react-icons/bi";
 import "./Header.css";
-import { useSelector } from "react-redux";
-//import { createItem, getAllItems } from "../../services/api.service";
 
 const Header = () => {
-  const { count } = useSelector((state) => state.counter);
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (

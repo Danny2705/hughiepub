@@ -37,7 +37,6 @@ export async function getEvent() {
 }
 
 export const updateEvent = async (id, updatedEvent) => {
-  // console.log(id);
   return httpClient
     .put(`/calendar/update-event/${id}`, updatedEvent)
     .then((response) => {
@@ -63,6 +62,65 @@ export const deleteEvent = async (id) => {
 export const getEventById = async (id) => {
   return httpClient
     .get(`/calendar/get-events/${id}`)
+    .then((response) => {
+      return response.data;
+    })
+    .catch((error) => {
+      throw error;
+    });
+};
+
+export const getAllItems = async () => {
+  return httpClient
+    .get(`/items`)
+    .then((response) => {
+      return response.data;
+    })
+    .catch((error) => {
+      throw error;
+    });
+};
+
+// Fetch a single item by ID
+export const getItemById = async (id) => {
+  return httpClient
+    .get(`/items/${id}`)
+    .then((response) => {
+      return response.data;
+    })
+    .catch((error) => {
+      throw error;
+    });
+};
+
+// Create a new item
+export const createItem = async (item) => {
+  console.log("item", item);
+  return httpClient
+    .post(`/items`, item)
+    .then((response) => {
+      return response.data;
+    })
+    .catch((error) => {
+      throw error;
+    });
+};
+
+// Update an existing item by ID
+export const updateItem = async (id, updatedItem) => {
+  return httpClient
+    .put(`/items/${id}`, updatedItem)
+    .then((response) => {
+      return response.data;
+    })
+    .catch((error) => {
+      throw error;
+    });
+};
+
+export const deleteItem = async (id) => {
+  return httpClient
+    .delete(`/items/${id}`)
     .then((response) => {
       return response.data;
     })

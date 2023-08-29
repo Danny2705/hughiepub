@@ -27,16 +27,14 @@ const getItemById = async (req, res) => {
 // Create a new item
 const createItem = async (req, res) => {
   try {
-    // console.log(req.body);
-    const { name, price, quantity } = req.body;
+    const { name, price, category } = req.body;
     const desc = req.body.description;
     const newItem = new Item({
       name,
       desc,
       price,
-      quantity,
+      category,
     });
-    // console.log(name, desc, price);
     await newItem.save();
     res.json({ status: "success" });
   } catch (error) {
@@ -47,12 +45,13 @@ const createItem = async (req, res) => {
 // Update an existing item by ID
 const updateItem = async (req, res) => {
   const { id } = req.params;
-  const { name, desc, price } = req.body;
+  const { name, desc, price, category } = req.body;
   try {
     const updatedItem = await Item.findByIdAndUpdate(id, {
       name,
       desc,
       price,
+      category,
     });
     if (!updatedItem) {
       return res.status(404).json({ error: "Item not found" });

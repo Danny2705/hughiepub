@@ -107,3 +107,14 @@ export const getEventById = async (id) => {
       throw error;
     });
 };
+
+// export const getCategory = async () => {
+//   return httpClient
+//     .get(`/categories`)
+//     .then((response) => {
+//       return response.data;
+//     })
+//     .catch((error) => {
+//       throw error;
+//     });
+// };
